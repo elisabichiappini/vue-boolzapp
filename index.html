@@ -62,8 +62,8 @@
                             <!--singole preview chat-->
                             <li v-for="contact in contacts" class="preview-chat">
                                 <div class="box-avatars d-flex justify-center">
-                                    <img class="photo-list-avatar" :src="contact.avatar" alt="avatar-user">
-                                    <h4>{{contact.name}}</h4>
+                                    <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
+                                    <h4>{{ contact.name }}</h4>
                                 </div>
                             </li>
                             <!--singole preview chat-->
