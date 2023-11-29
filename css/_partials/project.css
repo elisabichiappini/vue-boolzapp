@@ -163,3 +163,13 @@ input.text-search {
     line-height: var(--size-header);
     text-align: center;
 }
+
+.message-send {
+    background-color: var(--color-white);
+    padding: 20px 20px 25px;
+}
+
+.message-received {
+    background-color: #d5f9ba;
+    padding: 20px 20px 25px;
+}
