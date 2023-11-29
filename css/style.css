@@ -1,24 +1,11 @@
 /**************************************************************************
-STYLE
+STYLE WITH IMPORTS
 ***************************************************************************/
 
 @import "_partials/variables.css";
 @import "_partials/reset.css";
 @import "_partials/typography.css";
+@import "_partials/common.css";
 @import "_partials/utlities.css";
+@import "_partials/project.css";
 @import "_partials/debug.css";
-
-body {
-    height: 100vh;
-    width: 100%;
-}
-.green-box {
-    flex-shrink: 0;
-    height: 120px;
-    background-color: var(--color-bg1);
-}
-
-.gray-box {
-    background-color: var(--color-bg2);
-    height: calc(100vh - 120px);
-}

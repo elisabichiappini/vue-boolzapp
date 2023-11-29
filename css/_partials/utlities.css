@@ -9,3 +9,15 @@ UTILITIES
 .flex-column {
     flex-direction: column;
 }
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.text-align {
+    text-align: center;
+}
