@@ -176,8 +176,9 @@ const { createApp } = Vue
             }
         },
         methods: {
-            addLikeSingleChat () {
-                console.log('ho cliccato la chat')
+            addLikeSingleChat (index) {
+                console.log('ho cliccato la chat', index);
+                this.activeContact = index;
             }
         }
     }).mount('#app')

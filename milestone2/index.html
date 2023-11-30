@@ -58,8 +58,8 @@
                         <!--section list chat-->
                         <ul class="list-chats d-flex flex-column justify-center">
                             <!--singole preview chat-->
-                            <li v-for="contact in contacts" class="preview-chat">
-                                <div @click="addLikeSingleChat" class="box-avatars d-flex justify-center">
+                            <li v-for="(contact, index) in contacts" class="preview-chat">
+                                <div @click="addLikeSingleChat(index)" class="box-avatars d-flex justify-center">
                                     <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
                                     <h4>{{ contact.name }}</h4>
                                 </div>
@@ -75,13 +75,13 @@
                 <!--column right-->
                 <main v-if="activeContact !== null" id="chat" class="d-flex flex-column">
                     <!--column right header-->
-                    <div class="single-chat d-none" v-for="(contact, index) in contacts">
+                    <div class="single-chat">
                         <div class="top-single-chat d-flex align-center justify-space-between ">
                             <div class="box-avatar d-flex align-center">
-                                <img class="photo-avatar" :src="contact. avatar" :alt="`avatar-user-${contact.name}`">
+                                <img class="photo-avatar" :src="contacts[activeContact].avatar" :alt="`avatar-user-${contacts[activeContact].name}`">
                                 <div class="info-focus-chat">
-                                    <h4>{{ contact.name }}</h4>
-                                    <span>Ultimo accesso oggi alle 12</span>
+                                    <h4>{{ contacts[activeContact].name }}</h4>
+                                    <span>Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
                             <div class="icons">
@@ -94,15 +94,18 @@
                         <!--column right space messages-->
                         <div class="main-single-chat">
                             <ul class="container-message">
-                                <li class="message d-flex">
-                                    <p class="send">messaggio 1<span>ora</span></p>
+                                <li v-for="message in contacts[activeContact].messages" class="box-message d-flex">
+                                    <!--todo status-->
+                                    <p :class="status">{{ message.message }}<span>{{ message.date}}</span></p>
                                 </li>
-                                <li class="message d-flex justify-flex-end">
+                                <!-- creazione li messaggi con js
+                                <li class="message d-flex">
                                     <p class="received">messaggio 1<span>ora</span></p>
                                 </li>
                                 <li class="message d-flex">
                                     <p class="send">ciao sono elisa e mi piace il sale 1 <span>ora</span></p>
-                                </li>
+                                </li> 
+                                -->
                             </ul>
                         </div>
                         <!--/column right space messages-->
