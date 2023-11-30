@@ -10,6 +10,7 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
+            activeContact: null,
             contacts: [
                 {
                     name: 'Michele',
@@ -169,10 +170,14 @@ const { createApp } = Vue
                             date: '10/01/2020 15:51:00',
                             message: 'OK!!',
                             status: 'received'
-                        }
-                    ],
-                }
-            ]
+                        }],
+                    }
+                ]
+            }
+        },
+        methods: {
+            addLikeSingleChat () {
+                console.log('ho cliccato la chat')
+            }
         }
-    }
     }).mount('#app')

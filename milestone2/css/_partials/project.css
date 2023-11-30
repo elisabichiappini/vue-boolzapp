@@ -46,7 +46,7 @@ img.photo-avatar {
 }
 
 #setting .setting-top,
-#chat .top-chat {
+#chat .top-single-chat {
     height: var(--size-header);
     padding: 0.625rem 1.25rem;
     background-color: var(--color-bg-header);
@@ -100,12 +100,12 @@ img.photo-avatar {
 }
 
 #setting .setting-top .box-avatar > h4,
-#chat .top-chat .info-focus-chat {
+#chat .top-single-chat .info-focus-chat {
     margin-left: 1.25rem;
 }
 
 #setting .setting-top .icons > i,
-#chat .top-chat .icons > i{
+#chat .top-single-chat .icons > i{
     margin-left: 1.25rem;
     font-size: 1.5rem;
     color: var(--color-icone);
@@ -145,18 +145,7 @@ input.text-search {
 .search-chat > i {
     margin-left: 10px;
     width: 3.75rem;
-    text-align:center;
-}
-
-#chat .main-chat {
-    flex-grow: 1;
-    overflow-y: auto;
-    background-image: url('/milestone2/img/mine.jpg');
-}
-
-#chat .bottom-chat {
-    height: var(--size-header);
-    background-color: #f5eee8;
+    text-align: center;
 }
 
 .bottom-chat > input {
@@ -172,8 +161,28 @@ input.text-search {
     text-align: center;
 }
 
+#chat .single-chat {
+    height: calc(100% - var(--size-header));
+    background-image: url('/milestone2/img/mine.jpg');
+}
+
+#chat .top-single-chat {
+    height: var(--size-header);
+    background-color: var(--color-bg-header);
+}
+
+#chat .main-single-chat {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+#chat .bottom-chat {
+    height: var(--size-header);
+    background-color: #f5eee8;
+}
+
 .container-message {
-    max-width: 70%;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -195,15 +204,22 @@ input.text-search {
     border-radius: 10px;
 }
 
-#chat .main-chat .container-message p {
+#chat .main-single-chat .container-message p {
     position: relative;
     color: var(--color-icone);
 }
 
-#chat .main-chat .container-message p > span{
+#chat .main-single-chat .container-message p > span{
     position: absolute;
     bottom: .3125rem;
     right: .3125rem;
     text-align: end;
 }
 
+main.box-istruction {
+    background-color: var(--color-white);
+    width: 100%;
+    padding-top: var(--size-header);
+    text-transform: uppercase;
+    color: var(--color-bg1);
+}
