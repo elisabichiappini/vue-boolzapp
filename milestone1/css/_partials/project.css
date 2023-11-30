@@ -147,7 +147,7 @@ input.text-search {
 #chat .main-chat {
     flex-grow: 1;
     overflow-y: auto;
-    background-image: url('/milestone2/img/mine.jpg');
+    background-image: url('/milestone1/img/mine.jpg');
 }
 
 #chat .bottom-chat {
