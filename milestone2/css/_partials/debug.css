@@ -1,0 +1,57 @@
+/**************************************************************************
+DEBUG
+***************************************************************************/
+
+.debug #webapp {
+    background-color: aqua;
+    border:1px dashed white;
+}
+
+.debug #setting {
+    background-color: rgb(250, 151, 151);
+    border:1px dashed rgb(170, 168, 168);
+}
+
+.debug .setting-top {
+    background-color: rgb(139, 14, 31);
+}
+
+.debug .setting-main {
+    background-color: rgb(200, 141, 141);
+}
+
+.debug .setting-main > .notification {
+    background-color: rgb(172, 19, 44);
+}
+
+.debug .setting-main > .search-chat {
+    background-color: rgb(224, 57, 85);
+}
+
+.debug .setting-main > .list-chats {
+    background-color: rgb(227, 38, 70);
+}
+.debug ul.list-chats > .preview-chat {
+    background-color: rgb(214, 181, 185)
+}
+
+.debug #chat {
+    background-color: rgb(163, 239, 163);
+    border:1px dashed rgb(161, 157, 157);
+}
+
+.debug #chat > .top-chat {
+    background-color: green;
+} 
+
+.debug #chat > .main-chat {
+    background-color: rgb(90, 158, 90);
+}
+
+.debug #chat > .bottom-chat {
+    background-color: rgb(155, 194, 155);
+}
+
+.debug .box-avatars {
+    border: 1px dashed black;
+}
