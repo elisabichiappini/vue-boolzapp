@@ -3,23 +3,14 @@ PROJECT
 ***************************************************************************/
 
 /* BACKGROUND */
-.green-box {
-    flex-shrink: 0;
-    height: 120px;
-    background-color: var(--color-bg1);
-}
 
-.gray-box {
-    background-color: var(--color-bg2);
-    height: calc(100vh - 120px);
+#bg-app {
+    height: 100vh;
+    background: linear-gradient(to bottom, var( --color-bg1) 145px, var( --color-bg2) 145px); 
 }
 
 /* APP */
-.container {
-    width: 1000px;
-    margin: 0 auto;
-}
-
+/* container */
 #webapp  {
     position: absolute;
     width: 70%;
@@ -27,6 +18,11 @@ PROJECT
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
 }
 
 #setting {
@@ -59,6 +55,10 @@ PROJECT
 #setting .setting-main .search-chat > i {
     background-color: var(--color-white);
     padding: 7px;
+}
+
+i.big {
+    color:#d5f9ba
 }
 
 #setting .setting-main > ul.list-chats {
