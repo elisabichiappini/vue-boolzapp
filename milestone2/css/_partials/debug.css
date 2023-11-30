@@ -55,3 +55,7 @@ DEBUG
 .debug .box-avatars {
     border: 1px dashed black;
 }
+
+.debug .container-message {
+    background-color: lightseagreen;
+}

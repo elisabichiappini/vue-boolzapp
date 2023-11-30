@@ -20,13 +20,29 @@ PROJECT
     transform: translate(-50%, -50%);
 }
 
+
+img.photo-avatar {
+    display: block;
+    width: 3.125rem;
+    object-fit: cover;
+    border-radius: 3.125rem;
+}
+
+.box-avatars > img.photo-list-avatar {
+    display: block;
+    width: 3.75rem;
+    object-fit: cover;
+    border-radius: 3.125rem;
+    margin-right: 1.25rem;
+}
+
 .container {
     width: 1000px;
     margin: 0 auto;
 }
 
 #setting {
-    width: calc(100% / 3);
+    width: 500px;
 }
 
 #setting .setting-top,
@@ -57,31 +73,26 @@ PROJECT
     padding: 7px;
 }
 
-i.big {
-    color:#d5f9ba
-}
 
 #setting .setting-main > ul.list-chats {
     overflow-y: auto;
     flex-grow: 1;
 }
 
+#setting .setting-main .list-chats > li.preview-chat:hover {
+    background-color: var(--color-bg-header);
+}
+
 #setting .setting-main .list-chats > li.preview-chat {
     padding:0.625rem 1.25rem;
     background-color: var(--color-white);
-    border: .0313rem solid var(--color-bg-left)
+    border: .0313rem solid var(--color-bg-left);
+    cursor: pointer;
 }
 
 #chat {
     flex-grow: 1;
     overflow: hidden;
-}
-
-img.photo-avatar {
-    display: block;
-    width: 3.125rem;
-    object-fit: cover;
-    border-radius: 3.125rem;
 }
 
 #setting .setting-main {
@@ -130,18 +141,11 @@ input.text-search {
 .search-chat {
     background-color: var(--color-white);
 }
+
 .search-chat > i {
     margin-left: 10px;
     width: 3.75rem;
     text-align:center;
-}
-
-.box-avatars > img.photo-list-avatar {
-    display: block;
-    width: 3.75rem;
-    object-fit: cover;
-    border-radius: 3.125rem;
-    margin-right: 1.25rem;
 }
 
 #chat .main-chat {
@@ -168,12 +172,38 @@ input.text-search {
     text-align: center;
 }
 
-.message-send {
-    background-color: var(--color-white);
-    padding: 20px 20px 25px;
+.container-message {
+    max-width: 70%;
+    margin: 0 auto;
 }
 
-.message-received {
-    background-color: #d5f9ba;
-    padding: 20px 20px 25px;
+.message {
+    padding: 20px;
 }
+
+.send {
+    background-color: var(--color-white);
+    width: 310px;
+    padding: 20px 20px 25px;
+    border-radius: 10px;
+}
+
+.received {
+    background-color: #d5f9ba;
+    width: 310px;
+    padding: 20px 20px 25px;
+    border-radius: 10px;
+}
+
+#chat .main-chat .container-message p {
+    position: relative;
+    color: var(--color-icone);
+}
+
+#chat .main-chat .container-message p > span{
+    position: absolute;
+    bottom: .3125rem;
+    right: .3125rem;
+    text-align: end;
+}
+
