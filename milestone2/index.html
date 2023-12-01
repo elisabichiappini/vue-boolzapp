@@ -94,9 +94,13 @@
                         <!--column right space messages-->
                         <div class="main-single-chat">
                             <ul class="container-message d-flex flex-column">
-                                <li v-for="message in contacts[activeContact].messages" class="box-message">
-                                    <!--TODO-->
-                                    <p :class="message.status">{{ message.message }}<span>{{ message.date }}</span></p>
+                                <li v-for="message in contacts[activeContact].messages" 
+                                    class="d-flex box-message" 
+                                    :class="message.status">
+                                    <p>{{ message.message }}
+                                        <span>{{ message.date }}</span>
+                                    </p>
+                                    
                                 </li>
                             </ul>
                         </div>

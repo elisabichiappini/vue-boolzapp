@@ -22,9 +22,7 @@ UTILITIES
     text-align: center;
 }
 
-.justify-flex-end {
-    justify-content: flex-end;
-}
+
 
 .d-none {
     display: none;

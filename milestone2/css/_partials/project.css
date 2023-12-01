@@ -42,6 +42,7 @@ img.photo-avatar {
 
 #setting {
     width: 500px;
+    flex-shrink: 0;
 }
 
 #setting .setting-top,
@@ -71,7 +72,6 @@ img.photo-avatar {
     background-color: var(--color-white);
     padding: 7px;
 }
-
 
 #setting .setting-main > ul.list-chats {
     overflow-y: auto;
@@ -186,7 +186,8 @@ input.text-search {
 }
 
 .box-message {
-    padding: 20px;
+    margin: 20px;
+    position: relative;
 }
 
 .sent {
@@ -201,15 +202,14 @@ input.text-search {
     width: 310px;
     padding: 20px 20px 25px;
     border-radius: 10px;
-    align-items: flex-end;
+    align-self: end;
 }
 
-#chat .main-single-chat .container-message p {
-    position: relative;
+#chat .main-single-chat .container-message.box-message > p  {
     color: var(--color-icone);
 }
 
-#chat .main-single-chat .container-message p > span{
+#chat .main-single-chat .container-message .box-message p > span{
     position: absolute;
     bottom: .3125rem;
     right: .3125rem;
