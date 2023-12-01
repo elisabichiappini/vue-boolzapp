@@ -20,7 +20,7 @@
     <!--bg + app-->
     <div id="bg-app">
         <!--area vuejs-->
-        <div id="app">
+        <div id="app" v-cloak>
             <!--app-->
             <div id="webapp" class="container d-flex">
                 <!--column left-->
@@ -94,11 +94,11 @@
                         <!--column right space messages-->
                         <div class="main-single-chat">
                             <ul class="container-message d-flex flex-column">
-                                <li v-for="message in contacts[activeContact].messages" 
+                                <li v-for="messageObject in contacts[activeContact].messages" 
                                     class="d-flex box-message" 
-                                    :class="message.status">
-                                    <p>{{ message.message }}
-                                        <span>{{ message.date }}</span>
+                                    :class="messageObject.status">
+                                    <p>{{ messageObject.message }}
+                                        <span>{{ messageTime(messageObject.date) }}</span>
                                     </p>
                                     
                                 </li>
@@ -128,6 +128,9 @@
     <!--add CDN vuejs-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--/add CDN vuejs-->
+    <!--add CDN luxon-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!--/add CDN luxon-->
     <!--add file javascript-->
     <script src="js/myscript.js"></script>
     <!--add file javascript-->

@@ -5,6 +5,10 @@ JAVASCRIPT
 //restrizione linguaggio javascript
 'use strict';
 
+// Luxon
+const DateTime = luxon.DateTime;
+
+// Vue
 const { createApp } = Vue
 
     createApp({
@@ -179,8 +183,10 @@ const { createApp } = Vue
             addLikeSingleChat (index) {
                 console.log('ho cliccato la chat', index);
                 this.activeContact = index;
-            }
+            },
+            messageTime(time) {
+                return DateTime.fromFormat(time, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
         },
-        
-        
+    }
     }).mount('#app')
+
