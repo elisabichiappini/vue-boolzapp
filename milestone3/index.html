@@ -108,7 +108,8 @@
                     <!--column right footer-->
                     <div class="bottom-chat d-flex">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <!--TO DO devo svuotare il campo e inviarlo in chat-->
+                        <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="sendMyMessage">
                         <i class="fa-solid fa-microphone"></i>
                     </div>
                     <!--/column right footer-->

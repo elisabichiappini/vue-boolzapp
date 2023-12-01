@@ -14,6 +14,8 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
+            answerOk : 'Ok!',
+            newMessage: '',
             activeContact: null,
             contacts: [
                 {
@@ -180,13 +182,29 @@ const { createApp } = Vue
             }
         },
         methods: {
+            //funzione per chiamare la chat dalla lista
             addLikeSingleChat (index) {
-                console.log('ho cliccato la chat', index);
                 this.activeContact = index;
             },
+            //funzione per interpretare ora in formato 
             messageTime(time) {
                 return DateTime.fromFormat(time, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
-        },
-    }
+            },
+            //funzione per interpretare ora in formato message
+            timeIstantMessage (time) {
+                return DateTime.now(time).toFormat('dd/MM/yyyy HH:mm:ss');
+            },
+            //funzione per inviare un messaggio da input e aggiungerlo nell'array di oggetti messaggi con lo status sent
+            sendMyMessage() {
+                console.log('ho inviato un messaggio');
+                this.contacts[this.activeContact].messages.push({date: this.timeIstantMessage(), message: this.newMessage, status: 'sent'})
+                this.newMessage = '';
+                setTimeout(this.okAutomatic, 3000);
+            },
+            //funzione per ricevere come risposta all'input e aggiungerlo nell'array di oggetti con lo status received
+            okAutomatic() {
+                this.contacts[this.activeContact].messages.push({date: this.timeIstantMessage(), message: this.answerOk, status: 'received'})
+            },
+        }
     }).mount('#app')
 
