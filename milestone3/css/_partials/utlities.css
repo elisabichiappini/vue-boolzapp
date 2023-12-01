@@ -1,0 +1,29 @@
+/**************************************************************************
+UTILITIES
+***************************************************************************/
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+
+.d-none {
+    display: none;
+}
