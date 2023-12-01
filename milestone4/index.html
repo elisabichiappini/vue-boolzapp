@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <!--add font Lato google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <!--add font Lato google Fonts-->
+    <!--CDN font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--/CDN font awesome-->
+    <!--add file css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--/add file css-->
+</head>
+<body>
+    <!--bg + app-->
+    <div id="bg-app">
+        <!--area vuejs-->
+        <div id="app" v-cloak>
+            <!--app-->
+            <div id="webapp" class="container d-flex">
+                <!--column left-->
+                <aside id="setting" class="d-flex flex-column">
+                    <!--column left header-->
+                    <div class="setting-top d-flex align-center justify-space-between">
+                        <div class="box-avatar d-flex align-center">
+                            <img class="photo-avatar" src="img/avatar_io.jpg" alt="avatar-user">
+                            <h4>Nome Utente</h4>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!--/column left header-->
+                    <!--column left main: notification + search chat + list chat-->
+                    <div class="setting-main d-flex flex-column">
+                        <!--section notification-->
+                        <div class="notification d-flex align-center justify-center">
+                            <i class="text-center fa-solid fa-bell-slash"></i>
+                            <div class="text-notification">
+                                <h4>Ricevi notifiche di nuovi messaggi</h4>
+                                <a href="#" target="_blank">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <!--/section notification-->
+                        <!--section search chat-->
+                        <div class="search-chat d-flex align-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input class="text-search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                        <!--/section search chat-->
+                        <!--section list chat-->
+                        <ul class="list-chats d-flex flex-column justify-center">
+                            <!--singole preview chat-->
+                            <li v-for="(contact, index) in contacts" class="preview-chat">
+                                <div @click="addLikeSingleChat(index)" class="box-avatars d-flex justify-center">
+                                    <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
+                                    <h4>{{ contact.name }}</h4>
+                                </div>
+                            </li>
+                            <!--singole preview chat-->
+                        </ul>
+                        <!--section list chat-->
+                    </div>
+                    <!--column left main: notification + search chat + list chat-->
+                </aside>
+                <!--/column left-->
+
+                <!--column right-->
+                <main v-if="activeContact !== null" id="chat" class="d-flex flex-column">
+                    <!--column right header-->
+                    <div class="single-chat">
+                        <div class="top-single-chat d-flex align-center justify-space-between ">
+                            <div class="box-avatar d-flex align-center">
+                                <img class="photo-avatar" :src="contacts[activeContact].avatar" :alt="`avatar-user-${contacts[activeContact].name}`">
+                                <div class="info-focus-chat">
+                                    <h4>{{ contacts[activeContact].name }}</h4>
+                                    <span>Ultimo accesso oggi alle 12:00</span>
+                                </div>
+                            </div>
+                            <div class="icons">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <!--column right space messages-->
+                        <div class="main-single-chat">
+                            <ul class="container-message d-flex flex-column">
+                                <li v-for="messageObject in contacts[activeContact].messages" 
+                                    class="d-flex box-message" 
+                                    :class="messageObject.status">
+                                    <p>{{ messageObject.message }}
+                                        <span>{{ messageTime(messageObject.date) }}</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/column right space messages-->
+                    </div>
+                    <!--/column right header-->
+                    <!--column right footer-->
+                    <div class="bottom-chat d-flex">
+                        <i class="fa-regular fa-face-smile"></i>
+                        <!--TO DO devo svuotare il campo e inviarlo in chat-->
+                        <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="sendMyMessage">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                    <!--/column right footer-->
+                </main> 
+                <!--alternativa istruzioni per iniziare ad aprire la chat // BONUS-->
+                <main v-else class="box-istruction text-center">Apri una chat per iniziare a chattare su boolzapp</main>
+                <!--/alternativa istruzioni per iniziare ad aprire la chat // BONUS-->
+                <!--/column right-->
+            </div>
+            <!--webapp-->
+        </div>
+        <!--area vuejs-->  
+    </div>
+    <!--bg + app-->
+
+    <!--add CDN vuejs-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--/add CDN vuejs-->
+    <!--add CDN luxon-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <!--/add CDN luxon-->
+    <!--add file javascript-->
+    <script src="js/myscript.js"></script>
+    <!--add file javascript-->
+</body>
+</html>
