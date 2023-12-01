@@ -14,6 +14,7 @@ const { createApp } = Vue
     createApp({
         data() {
             return {
+            keyFiltered : '',
             answerOk : 'Ok!',
             newMessage: '',
             activeContact: null,
@@ -205,6 +206,17 @@ const { createApp } = Vue
             okAutomatic() {
                 this.contacts[this.activeContact].messages.push({date: this.timeIstantMessage(), message: this.answerOk, status: 'received'})
             },
+            // searchChat () {
+            //     this.contacts = this.contacts.filter((contact) => contact.name.includes(this.keyFiltered));
+            // },
+            //questa funzione ci sta restituendo gli oggetti contatto
+            searchChat() {
+                if(this.keyFiltered !== '') {
+                    return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.keyFiltered.toLowerCase()));
+                } else {
+                    return this.contacts;
+                }
+            }
         }
     }).mount('#app')
 
