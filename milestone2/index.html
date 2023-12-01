@@ -93,20 +93,11 @@
                         <!--/column right header-->
                         <!--column right space messages-->
                         <div class="main-single-chat">
-                            <ul class="container-message">
-                                <li v-for="message in contacts[activeContact].messages" class="box-message d-flex">
-                                    <!--todo-->
-                                    <p :class="message.status"
-                                    class="{justify-flex-end:message.status !== 'sent'}">{{ message.message }}<span>{{ message.date }}</span></p>
+                            <ul class="container-message d-flex flex-column">
+                                <li v-for="message in contacts[activeContact].messages" class="box-message">
+                                    <!--TODO-->
+                                    <p :class="message.status">{{ message.message }}<span>{{ message.date }}</span></p>
                                 </li>
-                                <!-- creazione li messaggi con js
-                                <li class="message d-flex">
-                                    <p class="received">messaggio 1<span>ora</span></p>
-                                </li>
-                                <li class="message d-flex">
-                                    <p class="send">ciao sono elisa e mi piace il sale 1 <span>ora</span></p>
-                                </li> 
-                                -->
                             </ul>
                         </div>
                         <!--/column right space messages-->

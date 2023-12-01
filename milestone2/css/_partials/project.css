@@ -180,18 +180,6 @@ input.text-search {
     background-color: #f5eee8;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .container-message {
     max-width: 80%;
     margin: 0 auto;
@@ -213,7 +201,7 @@ input.text-search {
     width: 310px;
     padding: 20px 20px 25px;
     border-radius: 10px;
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 #chat .main-single-chat .container-message p {
@@ -227,14 +215,6 @@ input.text-search {
     right: .3125rem;
     text-align: end;
 }
-
-
-
-
-
-
-
-
 
 main.box-istruction {
     background-color: var(--color-white);
