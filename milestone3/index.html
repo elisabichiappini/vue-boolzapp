@@ -61,7 +61,10 @@
                             <li v-for="(contact, index) in searchChat()" class="preview-chat">
                                 <div @click="addLikeSingleChat(index)" class="box-avatars d-flex justify-center">
                                     <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
-                                    <h4>{{ contact.name }}</h4>
+                                    <div class="info-avatar">
+                                        <h4>{{ contact.name }}</h4>
+                                        <span>Ultimo messaggio: ...</span>
+                                    </div>
                                 </div>
                             </li>
                             <!--singole preview chat-->
