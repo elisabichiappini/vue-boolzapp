@@ -52,13 +52,13 @@
                         <!--section search chat-->
                         <div class="search-chat d-flex align-center">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input class="text-search" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="keyFiltered" class="text-search" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                         <!--/section search chat-->
                         <!--section list chat-->
                         <ul class="list-chats d-flex flex-column justify-center">
                             <!--singole preview chat-->
-                            <li v-for="(contact, index) in contacts" class="preview-chat">
+                            <li v-for="(contact, index) in searchChat()" class="preview-chat">
                                 <div @click="addLikeSingleChat(index)" class="box-avatars d-flex justify-center">
                                     <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
                                     <h4>{{ contact.name }}</h4>
