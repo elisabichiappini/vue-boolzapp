@@ -35,6 +35,9 @@ img.photo-avatar {
     margin-right: 1.25rem;
 }
 
+.box-avatar {
+    gap: .9375rem;
+}
 .container {
     width: 1000px;
     margin: 0 auto;
@@ -43,6 +46,10 @@ img.photo-avatar {
 #setting {
     width: 500px;
     flex-shrink: 0;
+}
+
+#setting .setting-top {
+    border-right: 1px solid var(--color-icone);
 }
 
 #setting .setting-top,
@@ -55,6 +62,10 @@ img.photo-avatar {
 #setting .setting-main {
     flex-grow: 1;
     overflow: hidden;
+}
+
+.icons {
+     gap: 1.25rem;
 }
 
 #setting .setting-main > .notification {
@@ -78,11 +89,11 @@ img.photo-avatar {
     flex-grow: 1;
 }
 
-#setting .setting-main .list-chats > li.preview-chat:hover {
+#setting .setting-main ul.list-chats > li.preview-chat:hover {
     background-color: var(--color-bg-header);
 }
 
-#setting .setting-main .list-chats > li.preview-chat {
+#setting .setting-main ul.list-chats > li.preview-chat {
     padding:0.625rem 1.25rem;
     background-color: var(--color-white);
     border: .0313rem solid var(--color-bg-left);
@@ -98,14 +109,7 @@ img.photo-avatar {
     background-color: var(--color-bg-left);
 }
 
-#setting .setting-top .box-avatar > h4,
-#chat .top-single-chat .info-focus-chat {
-    margin-left: 1.25rem;
-}
-
-#setting .setting-top .icons > i,
-#chat .top-single-chat .icons > i{
-    margin-left: 1.25rem;
+.icons li > i {
     font-size: 1.5rem;
     color: var(--color-icone);
     text-align: center;
