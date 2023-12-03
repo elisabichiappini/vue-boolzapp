@@ -110,7 +110,7 @@ img.photo-avatar {
 #setting .setting-main .list-chats .preview-chat .box-avatars .info-avatar p > span {
     position: absolute;
     top: .3125rem;
-    right: .3125rem;
+    left: 28.3125rem;
     text-align: end;
 }
 
