@@ -107,6 +107,10 @@ img.photo-avatar {
     background-color: var(--color-bg-left);
 }
 
+.preview-chat {
+    position: relative;
+}
+
 #setting .setting-main .list-chats .preview-chat .box-avatars .info-avatar p > span {
     position: absolute;
     top: .3125rem;
@@ -144,6 +148,7 @@ input.text-search {
     flex-grow: 1;
     margin-right: 10px;
     height: 1.875rem;
+    outline: 0;
 }
 
 .search-chat {
@@ -154,6 +159,17 @@ input.text-search {
     margin-left: 10px;
     width: 3.75rem;
     text-align: center;
+}
+
+/* right webapp */
+#chat {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.container-message {
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .bottom-chat > input {
@@ -189,23 +205,8 @@ input.text-search {
     background-color: #f5eee8;
 }
 
-/* right webapp */
-#chat {
-    flex-grow: 1;
-    overflow: hidden;
-}
-
-.container-message {
-    max-width: 80%;
-    margin: 0 auto;
-}
-
 .box-message {
     margin: 20px;
-    position: relative;
-}
-
-.preview-chat {
     position: relative;
 }
 
