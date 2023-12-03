@@ -10,7 +10,8 @@ PROJECT
 }
 
 /* APP */
-/* container */
+
+/* general container */
 #webapp  {
     position: absolute;
     width: 70%;
@@ -18,6 +19,15 @@ PROJECT
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.box-avatar {
+    gap: .9375rem;
 }
 
 img.photo-avatar {
@@ -35,14 +45,16 @@ img.photo-avatar {
     margin-right: 1.25rem;
 }
 
-.box-avatar {
-    gap: .9375rem;
-}
-.container {
-    width: 1000px;
-    margin: 0 auto;
+#setting .setting-main {
+    flex-grow: 1;
+    overflow: hidden;
 }
 
+.icons {
+     gap: 1.25rem;
+}
+
+/* left webapp */
 #setting {
     width: 500px;
     flex-shrink: 0;
@@ -57,15 +69,6 @@ img.photo-avatar {
     height: var(--size-header);
     padding: 0.625rem 1.25rem;
     background-color: var(--color-bg-header);
-}
-
-#setting .setting-main {
-    flex-grow: 1;
-    overflow: hidden;
-}
-
-.icons {
-     gap: 1.25rem;
 }
 
 #setting .setting-main > .notification {
@@ -100,13 +103,15 @@ img.photo-avatar {
     cursor: pointer;
 }
 
-#chat {
-    flex-grow: 1;
-    overflow: hidden;
-}
-
 #setting .setting-main {
     background-color: var(--color-bg-left);
+}
+
+#setting .setting-main .list-chats .preview-chat .box-avatars .info-avatar p > span {
+    position: absolute;
+    top: .3125rem;
+    right: .3125rem;
+    text-align: end;
 }
 
 .icons li > i {
@@ -184,6 +189,12 @@ input.text-search {
     background-color: #f5eee8;
 }
 
+/* right webapp */
+#chat {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
 .container-message {
     max-width: 80%;
     margin: 0 auto;
@@ -191,6 +202,10 @@ input.text-search {
 
 .box-message {
     margin: 20px;
+    position: relative;
+}
+
+.preview-chat {
     position: relative;
 }
 
@@ -213,7 +228,7 @@ input.text-search {
     color: var(--color-icone);
 }
 
-#chat .main-single-chat .container-message .box-message p > span{
+#chat .main-single-chat .container-message .box-message p > span {
     position: absolute;
     bottom: .3125rem;
     right: .3125rem;
