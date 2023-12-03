@@ -30,7 +30,7 @@
                     <div class="setting-top d-flex align-center justify-space-between">
                         <div class="box-avatar d-flex align-center">
                             <img class="photo-avatar" src="img/avatar_io.jpg" alt="avatar-user">
-                            <h4>Nome Utente</h4>
+                            <h4>Elisa Chiappini</h4>
                         </div>
                         <!--tools-->
                         <ul class="icons d-flex">
@@ -68,11 +68,11 @@
                         <ul class="list-chats d-flex flex-column justify-center">
                             <!--singole preview chat-->
                             <li v-for="(contact, index) in searchChat()" class="preview-chat">
-                                <div @click="addLikeSingleChat(index)" class="box-avatars d-flex justify-center">
+                                <div @click="addLikeSingleChat(index)" class="box-avatars d-flex align-center justify-center">
                                     <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
                                     <div class="info-avatar">
                                         <h4>{{ contact.name }}</h4>
-                                        <p>ultimo messaggio: ...
+                                        <p>ultimo messaggio...
                                             <span>ora</span>
                                         </p>
                                     </div>
