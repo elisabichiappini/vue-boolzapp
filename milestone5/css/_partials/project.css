@@ -190,18 +190,9 @@ input.text-search {
     overflow-y: auto;
 }
 
-#chat {
-    position: relative;
-}
-
 #chat .top-single-chat {
     height: var(--size-header);
     background-color: var(--color-bg-header);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 9;
 }
 
 #chat .main-single-chat {

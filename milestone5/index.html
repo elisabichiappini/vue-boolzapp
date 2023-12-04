@@ -89,27 +89,27 @@
                 <!--column right-->
                 <main v-if="activeContact !== null" id="chat" class="d-flex flex-column">
                     <!--column right header-->
-                    <div class="single-chat">
-                        <div class="top-single-chat d-flex align-center justify-space-between ">
-                            <div class="box-avatar d-flex align-center">
-                                <img class="photo-avatar" :src="contacts[activeContact].avatar" :alt="`avatar-user-${contacts[activeContact].name}`">
-                                <div class="info-focus-chat">
-                                    <h4>{{ contacts[activeContact].name }}</h4>
-                                    <span>Ultimo accesso oggi alle 12:00</span>
-                                </div>
+                    <div class="top-single-chat d-flex align-center justify-space-between ">
+                        <div class="box-avatar d-flex align-center">
+                            <img class="photo-avatar" :src="contacts[activeContact].avatar" :alt="`avatar-user-${contacts[activeContact].name}`">
+                            <div class="info-focus-chat">
+                                <h4>{{ contacts[activeContact].name }}</h4>
+                                <span>Ultimo accesso oggi alle 12:00</span>
                             </div>
-                            <ul class="icons d-flex">
-                                <li>
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-paperclip"></i>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                                </li>
-                            </ul>
                         </div>
+                        <ul class="icons d-flex">
+                            <li>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-paperclip"></i>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="single-chat">
                         <!--column right space messages-->
                         <div class="main-single-chat">
                             <ul class="container-message d-flex flex-column">
