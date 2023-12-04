@@ -187,7 +187,7 @@ input.text-search {
 
 #chat .single-chat {
     height: calc(100% - var(--size-header));
-    background-image: url('/milestone2/img/mine.jpg');
+    background-image: url('/milestone5/img/mine.jpg');
 }
 
 #chat .top-single-chat {
