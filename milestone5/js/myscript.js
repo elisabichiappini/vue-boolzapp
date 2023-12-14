@@ -200,7 +200,7 @@ const { createApp } = Vue
             sendMyMessage() {
                 this.contacts[this.activeContact].messages.push({date: this.timeIstantMessage(), message: this.newMessage, status: 'sent'})
                 this.newMessage = '';
-                setTimeout(this.okAutomatic, 3000);
+                setTimeout(this.okAutomatic, 1_000);
             },
             //funzione per ricevere come risposta all'input e aggiungerlo nell'array di oggetti con lo status received
             okAutomatic() {
