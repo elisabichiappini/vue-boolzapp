@@ -68,7 +68,7 @@
                         <ul class="list-chats d-flex flex-column justify-center">
                             <!--singole preview chat-->
                             <li v-for="(contact, index) in searchChat()" class="preview-chat">
-                                <div @click="addLikeSingleChat(index)" class="box-avatars d-flex align-center justify-center">
+                                <div @click="addLikeSingleChat(contact.myContactIndex)" class="box-avatars d-flex align-center justify-center">
                                     <img class="photo-list-avatar" :src="contact.avatar" :alt="`avatar-user-${contact.name}`">
                                     <div class="info-avatar">
                                         <h4>{{ contact.name }}</h4>
@@ -87,7 +87,7 @@
                 <!--/column left-->
 
                 <!--column right-->
-                <main v-if="activeContact !== null" id="chat" class="d-flex flex-column">
+                <main v-if="activeContact !== ''" id="chat" class="d-flex flex-column">
                     <!--column right header-->
                     <div class="top-single-chat d-flex align-center justify-space-between ">
                         <div class="box-avatar d-flex align-center">

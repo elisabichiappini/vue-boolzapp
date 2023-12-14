@@ -17,7 +17,8 @@ const { createApp } = Vue
             keyFiltered : '',
             answerOk : 'Ok!',
             newMessage: '',
-            activeContact: null,
+            activeContact: '',
+            myContactIndex: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -197,7 +198,6 @@ const { createApp } = Vue
             },
             //funzione per inviare un messaggio da input e aggiungerlo nell'array di oggetti messaggi con lo status sent
             sendMyMessage() {
-                console.log('ho inviato un messaggio');
                 this.contacts[this.activeContact].messages.push({date: this.timeIstantMessage(), message: this.newMessage, status: 'sent'})
                 this.newMessage = '';
                 setTimeout(this.okAutomatic, 3000);
@@ -211,10 +211,21 @@ const { createApp } = Vue
             // },
             //questa funzione ci sta restituendo gli oggetti contatto
             searchChat() {
-                if(this.keyFiltered !== '') {
-                    return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.keyFiltered.toLowerCase()));
+                if(this.keyFiltered.trim() !== '') {
+                    return this.contacts
+                    .map((contact, index) => ({
+                        ...contact,
+                        myContactIndex:index,
+                    }))
+                    .filter((contact) => contact.name.toLowerCase().includes(this.keyFiltered.toLowerCase()));
+                    ; 
                 } else {
-                    return this.contacts;
+                    return this.contacts.map((contact,index) => {
+                        return {
+                            ...contact,
+                            myContactIndex: index,
+                        }
+                    });
                 }
             }
         }
